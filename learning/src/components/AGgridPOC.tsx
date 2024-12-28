@@ -16,6 +16,7 @@ import {
   ModuleRegistry,
   NumberFilterModule,
   TextFilterModule,
+  themeQuartz,
   ValidationModule,
 } from "ag-grid-community";
 import { IEmployeeData, sampleData } from './employees';
@@ -28,6 +29,13 @@ ModuleRegistry.registerModules([
   DateFilterModule,
   NumberFilterModule
 ]);
+
+const myTheme = themeQuartz.withParams({
+  headerTextColor: "rgb(255, 255, 255)",
+  headerBackgroundColor: "rgb(0, 0, 0)",
+  oddRowBackgroundColor: "rgb(0, 0, 0, 0.03)",
+  headerColumnResizeHandleColor: "rgb(100, 100, 100)",
+});
 
 
 
@@ -77,6 +85,10 @@ const booleanCellRenderer = (params: ICellRendererParams): string => {
 };
 
 function AGgridPOC () {
+
+  const theme = useMemo<Theme | "legacy">(() => {
+    return myTheme;
+  }, []);
  
 
   const [rowData, setRowData] = useState<IEmployeeData[]>(sampleData);
@@ -190,6 +202,7 @@ function AGgridPOC () {
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           animateRows={true}
+          theme={theme}
           enableRangeSelection={true}
           rowSelection="multiple"
         />
