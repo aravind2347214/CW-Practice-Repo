@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import type {
   ColDef,
@@ -8,6 +8,7 @@ import type {
   INumberFilterParams,
   ValueFormatterParams,
   ICellRendererParams,
+  Theme,
 } from "ag-grid-community";
 
 import {
@@ -19,7 +20,7 @@ import {
   themeQuartz,
   ValidationModule,
 } from "ag-grid-community";
-import { IEmployeeData, sampleData } from './employees';
+import { IEmployeeData, sampleData } from '../data/employees';
 
 // Register required modules
 ModuleRegistry.registerModules([
@@ -91,7 +92,7 @@ function AGgridPOC () {
   }, []);
  
 
-  const [rowData, setRowData] = useState<IEmployeeData[]>(sampleData);
+  const [rowData] = useState<IEmployeeData[]>(sampleData);
   const [columnDefs] = useState<(ColDef | ColGroupDef)[]>([
     {
       headerName: 'Personal Information',

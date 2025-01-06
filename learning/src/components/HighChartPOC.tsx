@@ -1,12 +1,7 @@
-import React from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
-interface PriceData {
-  year: string;
-  areaA: number;
-  areaB: number;
-}
+
 const options: Highcharts.Options = {
   chart: {
     type: 'column'
