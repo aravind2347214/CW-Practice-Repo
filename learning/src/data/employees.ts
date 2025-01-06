@@ -14,7 +14,7 @@
 
 
 
-export const sampleData: IEmployeeData[] = [
+export const SAMPLEDATA: IEmployeeData[] = [
     {
         name: "John Smith",
         age: 32,

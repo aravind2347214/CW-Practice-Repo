@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-    <div className='m-3 flex gap-[100px] flex-col p-1 w-full '>
-      <AGgridPOC/>
-      <hr className='border-[3px] rounded-[6px] border-red-500' />
+    <div className='m-3 flex gap-[10vh] flex-col p-1 w-full '>
+      <AGgridPOC />
+      <hr className='border-[3px] rounded-md border-red-500' />
       <HighChartPOC/>
     </div>
      

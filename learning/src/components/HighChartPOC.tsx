@@ -1,5 +1,6 @@
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { SERIES_A, SERIES_B } from '../data/housing';
 
 
 const options: Highcharts.Options = {
@@ -34,11 +35,11 @@ const options: Highcharts.Options = {
   series: [{
     name: 'Area A',
     type: 'column', 
-    data: [250000, 265000, 285000, 305000, 325000, 345000, 375000, 405000, 435000, 465000]
+    data: SERIES_A
   }, {
     name: 'Area B',
     type: 'column', 
-    data: [280000, 295000, 315000, 340000, 365000, 390000, 425000, 460000, 495000, 530000]
+    data: SERIES_B
   }
 
 ]

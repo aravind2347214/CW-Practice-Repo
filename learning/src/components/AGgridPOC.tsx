@@ -20,7 +20,7 @@ import {
   themeQuartz,
   ValidationModule,
 } from "ag-grid-community";
-import { IEmployeeData, sampleData } from '../data/employees';
+import { IEmployeeData, SAMPLEDATA } from '../data/employees';
 
 // Register required modules
 ModuleRegistry.registerModules([
@@ -92,13 +92,13 @@ function AGgridPOC () {
   }, []);
  
 
-  const [rowData] = useState<IEmployeeData[]>(sampleData);
+  const [rowData] = useState<IEmployeeData[]>(SAMPLEDATA);
   const [columnDefs] = useState<(ColDef | ColGroupDef)[]>([
     {
       headerName: 'Personal Information',
       children: [
 
-        {columnGroupShow: 'closed', field:''},
+        {columnGroupShow: 'closed', field:'name'},
         {
           columnGroupShow: 'open', 
           field: 'name',
@@ -122,7 +122,7 @@ function AGgridPOC () {
     {
       headerName: 'Employment Details',
       children: [
-        {columnGroupShow: 'closed', field:''},
+        {columnGroupShow: 'closed', field:'position'},
 
         { 
           columnGroupShow: 'open', 
@@ -154,7 +154,7 @@ function AGgridPOC () {
     {
       headerName: 'Sales Performance',
       children: [
-        {columnGroupShow: 'closed', field:''},
+        {columnGroupShow: 'closed', field:'sales2024'},
 
         {
           columnGroupShow: 'open', 
