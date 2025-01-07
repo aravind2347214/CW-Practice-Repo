@@ -20,7 +20,8 @@ import {
   themeQuartz,
   ValidationModule,
 } from "ag-grid-community";
-import { IEmployeeData, SAMPLEDATA } from '../data/employees';
+import { SAMPLEDATA } from '../data/employees';
+import {IEmployeeData} from '../types/employee'
 
 // Register required modules
 ModuleRegistry.registerModules([
@@ -30,6 +31,9 @@ ModuleRegistry.registerModules([
   DateFilterModule,
   NumberFilterModule
 ]);
+
+const rowData :IEmployeeData[] = SAMPLEDATA;
+
 
 const myTheme = themeQuartz.withParams({
   headerTextColor: "rgb(255, 255, 255)",
@@ -92,7 +96,6 @@ function AGgridPOC () {
   }, []);
  
 
-  const [rowData] = useState<IEmployeeData[]>(SAMPLEDATA);
   const [columnDefs] = useState<(ColDef | ColGroupDef)[]>([
     {
       headerName: 'Personal Information',
